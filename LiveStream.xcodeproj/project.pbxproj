@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512C9CB81E6907A30088DCB6 /* LSLiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 512C9CB71E6907A30088DCB6 /* LSLiveModel.m */; };
 		513DFD351E67F5BC00687596 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DFD341E67F5BC00687596 /* main.m */; };
 		513DFD381E67F5BC00687596 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DFD371E67F5BC00687596 /* AppDelegate.m */; };
 		513DFD3E1E67F5BC00687596 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513DFD3C1E67F5BC00687596 /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		512C9CB61E6907A30088DCB6 /* LSLiveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLiveModel.h; sourceTree = "<group>"; };
+		512C9CB71E6907A30088DCB6 /* LSLiveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLiveModel.m; sourceTree = "<group>"; };
 		513DFD301E67F5BC00687596 /* LiveStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513DFD341E67F5BC00687596 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		513DFD361E67F5BC00687596 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 		513DFD691E67F81200687596 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				512C9CB61E6907A30088DCB6 /* LSLiveModel.h */,
+				512C9CB71E6907A30088DCB6 /* LSLiveModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 				513DFD771E67FE0500687596 /* BaseNavigationController.m in Sources */,
 				513DFD381E67F5BC00687596 /* AppDelegate.m in Sources */,
 				513DFD741E67FDD000687596 /* BaseViewController.m in Sources */,
+				512C9CB81E6907A30088DCB6 /* LSLiveModel.m in Sources */,
 				513DFD821E680C0B00687596 /* LSHomeViewModel.m in Sources */,
 				513DFD881E68111300687596 /* LSHomeViewCell.m in Sources */,
 				513DFD351E67F5BC00687596 /* main.m in Sources */,

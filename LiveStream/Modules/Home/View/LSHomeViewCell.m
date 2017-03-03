@@ -8,6 +8,8 @@
 
 #import "LSHomeViewCell.h"
 
+#define AVATAR_WIDTH 50
+
 @implementation LSHomeViewCell
 
 - (void)awakeFromNib {
@@ -29,57 +31,61 @@
     return self;
 }
 -(void)setupView{
-    [self addSubview:self.nameLabel];
+    @weakify(self);
+    [self addSubview:self.avatarView];
     [self addSubview:self.titleLabel];
-    [self addSubview:self.detailLabel];
-    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self addSubview:self.addressLabel];
+    [self addSubview:self.preImageView];
+    [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(10);
         make.left.equalTo(self.mas_left).offset(10);
         make.right.equalTo(self.mas_right).offset(-10);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.nameLabel.mas_bottom).offset(10);
+        make.top.equalTo(self.avatarView.mas_bottom).offset(10);
         make.left.equalTo(self.mas_left).offset(10);
         make.right.equalTo(self.mas_right).offset(-10);
-    }];
-    [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(10);
-        make.left.equalTo(self.mas_left).offset(10);
-        make.right.equalTo(self.mas_right).offset(-10);
-        make.bottom.equalTo(self.mas_bottom).offset(-10);
     }];
 }
--(UILabel *)nameLabel{
-    if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] init];
-        _nameLabel.backgroundColor = [UIColor blueColor];
-        _nameLabel.numberOfLines = 0;
-        _nameLabel.font = [UIFont systemFontOfSize:18];
+-(UIImageView *)avatarView
+{
+    if (!_avatarView) {
+        _avatarView = [[UIImageView alloc] init];
+        _avatarView.backgroundColor = [UIColor redColor];
+        _avatarView.contentMode = UIViewContentModeScaleAspectFit;
+        _avatarView.layer.cornerRadius = AVATAR_WIDTH / 2;
+        _avatarView.layer.masksToBounds = YES;
     }
-    return _nameLabel;
+    return _avatarView;
 }
+
 -(UILabel *)titleLabel{
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.backgroundColor = [UIColor yellowColor];
-        _titleLabel.numberOfLines = 0;
-        _titleLabel.font = [UIFont systemFontOfSize:16];
+        _titleLabel.font = [UIFont systemFontOfSize:14];
     }
     return _titleLabel;
 }
--(UILabel *)detailLabel{
-    if (!_detailLabel) {
-        _detailLabel = [[UILabel alloc] init];
-        _detailLabel.numberOfLines = 0;
-        _detailLabel.font = [UIFont systemFontOfSize:16];
+-(UILabel *)addressLabel{
+    if (!_addressLabel) {
+        _addressLabel = [[UILabel alloc] init];
+        _addressLabel.font = [UIFont systemFontOfSize:12];
     }
-    return _detailLabel;
+    return _addressLabel;
 }
--(void)setCellModel:(PJTableViewCellModel *)cellModel {
-    _cellModel = cellModel;
-    self.nameLabel.text = cellModel.name;
-    self.titleLabel.text = cellModel.title;
-    self.detailLabel.text = cellModel.detail;
+-(UIImageView *)preImageView
+{
+    if (!_preImageView) {
+        _preImageView = [[UIImageView alloc] init];
+        _preImageView.backgroundColor = [UIColor redColor];
+        _preImageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return _preImageView;
+}
+-(void)setCellModel:(LSHomeViewCellModel *)cellModel
+{
+    
 }
 
 

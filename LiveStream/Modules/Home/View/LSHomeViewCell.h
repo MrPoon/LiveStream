@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LSHomeViewModel.h"
 @interface LSHomeViewCell : UITableViewCell
 @property(nonatomic, strong) UIImageView *avatarView;
 @property(nonatomic, strong) UILabel *titleLabel;
 @property(nonatomic, strong) UILabel *addressLabel;
 @property(nonatomic, strong) UILabel *numberLabel;
-@property(nonatomic, strong) UIImageView *contentView;
+@property(nonatomic, strong) UIImageView *preImageView;
+@property(nonatomic, strong) LSHomeViewCellModel *cellModel;
 @end

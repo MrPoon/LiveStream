@@ -8,6 +8,10 @@
 
 #import "LSHomeViewModel.h"
 
+@implementation LSHomeViewCellModel
+
+@end
+
 @implementation LSHomeViewModel
 
 @end
