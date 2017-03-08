@@ -21,6 +21,7 @@
 		513DFD821E680C0B00687596 /* LSHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DFD811E680C0B00687596 /* LSHomeViewModel.m */; };
 		513DFD851E680F7100687596 /* LSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DFD841E680F7100687596 /* LSHomeViewController.m */; };
 		513DFD881E68111300687596 /* LSHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DFD871E68111300687596 /* LSHomeViewCell.m */; };
+		51FC89B81E6F9CE700701104 /* LSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FC89B71E6F9CE700701104 /* LSNetworkManager.m */; };
 		E871D8964CE87AB07485AABF /* libPods-LiveStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B313A374C2E2E9A1B1BD0B50 /* libPods-LiveStream.a */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,8 @@
 		513DFD841E680F7100687596 /* LSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHomeViewController.m; sourceTree = "<group>"; };
 		513DFD861E68111300687596 /* LSHomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHomeViewCell.h; sourceTree = "<group>"; };
 		513DFD871E68111300687596 /* LSHomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHomeViewCell.m; sourceTree = "<group>"; };
+		51FC89B61E6F9CE700701104 /* LSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNetworkManager.h; sourceTree = "<group>"; };
+		51FC89B71E6F9CE700701104 /* LSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNetworkManager.m; sourceTree = "<group>"; };
 		645B5CC9CE56618886FE2312 /* Pods-LiveStream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveStream.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiveStream/Pods-LiveStream.release.xcconfig"; sourceTree = "<group>"; };
 		992ED66B0345C24BAABB0804 /* Pods-LiveStream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveStream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiveStream/Pods-LiveStream.debug.xcconfig"; sourceTree = "<group>"; };
 		B313A374C2E2E9A1B1BD0B50 /* libPods-LiveStream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiveStream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +284,8 @@
 				513DFD751E67FE0500687596 /* BaseNavigationController.h */,
 				513DFD761E67FE0500687596 /* BaseNavigationController.m */,
 				513DFD7C1E68000700687596 /* Constants.h */,
+				51FC89B61E6F9CE700701104 /* LSNetworkManager.h */,
+				51FC89B71E6F9CE700701104 /* LSNetworkManager.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				513DFD7A1E67FE6500687596 /* LSTabBarController.m in Sources */,
 				513DFD851E680F7100687596 /* LSHomeViewController.m in Sources */,
 				513DFD771E67FE0500687596 /* BaseNavigationController.m in Sources */,
+				51FC89B81E6F9CE700701104 /* LSNetworkManager.m in Sources */,
 				513DFD381E67F5BC00687596 /* AppDelegate.m in Sources */,
 				513DFD741E67FDD000687596 /* BaseViewController.m in Sources */,
 				512C9CB81E6907A30088DCB6 /* LSLiveModel.m in Sources */,

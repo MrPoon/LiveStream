@@ -8,6 +8,7 @@
 
 #import "LSHomeViewController.h"
 #import "LSHomeViewModel.h"
+#import "LSHomeViewCell.h"
 @interface LSHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) LSHomeViewModel *viewModel;
@@ -35,8 +36,15 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellID = @"CELLID";
-
-    return nil;
+    LSHomeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[LSHomeViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    cell.cellModel = self.viewModel.dataSource[indexPath.row];
+    return cell;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 465;
 }
 
 - (void)didReceiveMemoryWarning {
