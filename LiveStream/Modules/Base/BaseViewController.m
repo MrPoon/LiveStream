@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +23,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - loadingView
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)showLoadingWithTitle:(NSString *)title Animated:(BOOL)animated {
+    if (!_progressHUD) {
+        _progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    }
+    _progressHUD.removeFromSuperViewOnHide = YES;
+    if (title) {
+        _progressHUD.labelText = title;
+    }
+    [self.view addSubview:_progressHUD];
+    [_progressHUD show:animated];
 }
-*/
+-(void)hideLoading {
+    if (_progressHUD) {
+        [_progressHUD hide:YES];
+    }
+}
 
 @end

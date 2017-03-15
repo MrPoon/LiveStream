@@ -36,6 +36,7 @@
     [self addSubview:self.avatarView];
     [self addSubview:self.titleLabel];
     [self addSubview:self.addressButton];
+    [self addSubview:self.numberLabel];
     [self addSubview:self.preImageView];
     [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
@@ -64,7 +65,7 @@
     [self.numberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         @strongify(self);
         make.left.equalTo(self.addressButton.mas_right).offset(20);
-        make.centerX.equalTo(self.avatarView.mas_centerX);
+        make.centerY.equalTo(self.avatarView.mas_centerY);
         make.right.equalTo(self.mas_right).offset(-10);
     }];
     [self.preImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -80,7 +81,6 @@
 {
     if (!_avatarView) {
         _avatarView = [[UIImageView alloc] init];
-        _avatarView.backgroundColor = [UIColor redColor];
         _avatarView.contentMode = UIViewContentModeScaleAspectFit;
         _avatarView.layer.cornerRadius = AVATAR_WIDTH / 2;
         _avatarView.layer.masksToBounds = YES;
@@ -91,7 +91,6 @@
 -(UILabel *)titleLabel{
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.backgroundColor = [UIColor yellowColor];
         _titleLabel.font = [UIFont systemFontOfSize:14];
     }
     return _titleLabel;
@@ -99,16 +98,27 @@
 -(UIButton *)addressButton{
     if (!_addressButton) {
         _addressButton = [[UIButton alloc] init];
+        _addressButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [_addressButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _addressButton.titleLabel.font = [UIFont systemFontOfSize:14];
         [_addressButton setImage:[UIImage imageNamed:@"home_location_8x8"] forState:UIControlStateNormal];
     }
     return _addressButton;
+}
+-(UILabel *)numberLabel
+{
+    if (!_numberLabel) {
+        _numberLabel = [[UILabel alloc] init];
+        _numberLabel.textAlignment = NSTextAlignmentRight;
+        _numberLabel.font = [UIFont systemFontOfSize:16];
+    }
+    return _numberLabel;
 }
 -(UIImageView *)preImageView
 {
     if (!_preImageView) {
         _preImageView = [[UIImageView alloc] init];
-        _preImageView.backgroundColor = [UIColor redColor];
-        _preImageView.contentMode = UIViewContentModeScaleAspectFit;
+        _preImageView.contentMode = UIViewContentModeScaleAspectFill;
     }
     return _preImageView;
 }
@@ -116,6 +126,7 @@
 {
     _cellModel = cellModel;
     
+    [self.avatarView sd_setImageWithURL:[NSURL URLWithString:cellModel.avatar] placeholderImage:[UIImage imageNamed:@"placeholder_head"]];
     self.titleLabel.text = cellModel.title;
     // 如果没有地址, 给个默认的地
     [self.addressButton setTitle:cellModel.address forState:UIControlStateNormal];

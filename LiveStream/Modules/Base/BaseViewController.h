@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface BaseViewController : UIViewController
+
+//loadingView
+@property(nonatomic, strong) MBProgressHUD *progressHUD;
+
+-(void)showLoadingWithTitle:(NSString *)title Animated:(BOOL)animated;
+
+-(void)hideLoading;
 
 @end

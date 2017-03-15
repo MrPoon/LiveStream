@@ -7,6 +7,8 @@
 //
 
 #import "LSTabBarController.h"
+#import "LSHomeViewController.h"
+#import "BaseNavigationController.h"
 @interface LSTabBarController ()
 
 @end
@@ -15,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIViewController *homeVC = [[UIViewController alloc] init];
+    LSHomeViewController *homeVC = [[LSHomeViewController alloc] init];
     [self addChildVC:homeVC andImageName:@"toolbar_home"];
     UIViewController *liveVC = [[UIViewController alloc] init];
     [self addChildVC:liveVC andImageName:@"toolbar_live"];

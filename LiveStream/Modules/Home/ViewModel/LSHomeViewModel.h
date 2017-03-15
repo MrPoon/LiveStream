@@ -7,6 +7,7 @@
 //
 
 #import <ReactiveViewModel/ReactiveViewModel.h>
+#import "LSLiveModel.h"
 
 @interface LSHomeViewCellModel : NSObject
 @property(nonatomic, strong) NSString *avatar;
@@ -16,11 +17,13 @@
 @property(nonatomic, assign) NSUInteger number;
 @property(nonatomic, strong) NSString *content;
 @property(nonatomic, strong) UIImage *startImage;
+@property(nonatomic, strong) LSLiveModel *liveModel;
 @end
 
 @interface LSHomeViewModel : RVMViewModel
 @property(nonatomic, strong) NSMutableArray *dataSource;
+@property(nonatomic, strong) NSNumber *number;
 
--(RACSignal *)getAllLiveData;
+-(RACSignal *)getAllLiveDataWithPageCount:(NSUInteger)pageCount;
 
 @end
