@@ -21,6 +21,11 @@
 		513DFD821E680C0B00687596 /* LSHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DFD811E680C0B00687596 /* LSHomeViewModel.m */; };
 		513DFD851E680F7100687596 /* LSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DFD841E680F7100687596 /* LSHomeViewController.m */; };
 		513DFD881E68111300687596 /* LSHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 513DFD871E68111300687596 /* LSHomeViewCell.m */; };
+		514D7A361E8214B600E6B13A /* NSObject+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7A351E8214B600E6B13A /* NSObject+MethodSwizzling.m */; };
+		514D7ADE1E826BDC00E6B13A /* BaseViewController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7ADD1E826BDC00E6B13A /* BaseViewController+Swizzling.m */; };
+		514D7AE11E82740700E6B13A /* NSMutableArray+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7AE01E82740700E6B13A /* NSMutableArray+Swizzling.m */; };
+		514D7AE41E82744000E6B13A /* NSMutableDictionary+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7AE31E82744000E6B13A /* NSMutableDictionary+Swizzling.m */; };
+		514D7AE71E83631900E6B13A /* LSPlayStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7AE61E83631900E6B13A /* LSPlayStreamViewController.m */; };
 		51FC89B81E6F9CE700701104 /* LSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FC89B71E6F9CE700701104 /* LSNetworkManager.m */; };
 		E871D8964CE87AB07485AABF /* libPods-LiveStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B313A374C2E2E9A1B1BD0B50 /* libPods-LiveStream.a */; };
 /* End PBXBuildFile section */
@@ -73,6 +78,16 @@
 		513DFD841E680F7100687596 /* LSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHomeViewController.m; sourceTree = "<group>"; };
 		513DFD861E68111300687596 /* LSHomeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHomeViewCell.h; sourceTree = "<group>"; };
 		513DFD871E68111300687596 /* LSHomeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHomeViewCell.m; sourceTree = "<group>"; };
+		514D7A341E8214B600E6B13A /* NSObject+MethodSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodSwizzling.h"; sourceTree = "<group>"; };
+		514D7A351E8214B600E6B13A /* NSObject+MethodSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodSwizzling.m"; sourceTree = "<group>"; };
+		514D7ADC1E826BDC00E6B13A /* BaseViewController+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseViewController+Swizzling.h"; path = "objc/BaseViewController+Swizzling.h"; sourceTree = "<group>"; };
+		514D7ADD1E826BDC00E6B13A /* BaseViewController+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseViewController+Swizzling.m"; path = "objc/BaseViewController+Swizzling.m"; sourceTree = "<group>"; };
+		514D7ADF1E82740700E6B13A /* NSMutableArray+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Swizzling.h"; sourceTree = "<group>"; };
+		514D7AE01E82740700E6B13A /* NSMutableArray+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Swizzling.m"; sourceTree = "<group>"; };
+		514D7AE21E82744000E6B13A /* NSMutableDictionary+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Swizzling.h"; sourceTree = "<group>"; };
+		514D7AE31E82744000E6B13A /* NSMutableDictionary+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Swizzling.m"; sourceTree = "<group>"; };
+		514D7AE51E83631900E6B13A /* LSPlayStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPlayStreamViewController.h; sourceTree = "<group>"; };
+		514D7AE61E83631900E6B13A /* LSPlayStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPlayStreamViewController.m; sourceTree = "<group>"; };
 		51FC89B61E6F9CE700701104 /* LSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNetworkManager.h; sourceTree = "<group>"; };
 		51FC89B71E6F9CE700701104 /* LSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNetworkManager.m; sourceTree = "<group>"; };
 		645B5CC9CE56618886FE2312 /* Pods-LiveStream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveStream.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiveStream/Pods-LiveStream.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +221,8 @@
 				513DFD791E67FE6500687596 /* LSTabBarController.m */,
 				513DFD831E680F7100687596 /* LSHomeViewController.h */,
 				513DFD841E680F7100687596 /* LSHomeViewController.m */,
+				514D7AE51E83631900E6B13A /* LSPlayStreamViewController.h */,
+				514D7AE61E83631900E6B13A /* LSPlayStreamViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +303,14 @@
 				513DFD7C1E68000700687596 /* Constants.h */,
 				51FC89B61E6F9CE700701104 /* LSNetworkManager.h */,
 				51FC89B71E6F9CE700701104 /* LSNetworkManager.m */,
+				514D7A341E8214B600E6B13A /* NSObject+MethodSwizzling.h */,
+				514D7A351E8214B600E6B13A /* NSObject+MethodSwizzling.m */,
+				514D7ADC1E826BDC00E6B13A /* BaseViewController+Swizzling.h */,
+				514D7ADD1E826BDC00E6B13A /* BaseViewController+Swizzling.m */,
+				514D7ADF1E82740700E6B13A /* NSMutableArray+Swizzling.h */,
+				514D7AE01E82740700E6B13A /* NSMutableArray+Swizzling.m */,
+				514D7AE21E82744000E6B13A /* NSMutableDictionary+Swizzling.h */,
+				514D7AE31E82744000E6B13A /* NSMutableDictionary+Swizzling.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -489,13 +514,18 @@
 				513DFD7A1E67FE6500687596 /* LSTabBarController.m in Sources */,
 				513DFD851E680F7100687596 /* LSHomeViewController.m in Sources */,
 				513DFD771E67FE0500687596 /* BaseNavigationController.m in Sources */,
+				514D7ADE1E826BDC00E6B13A /* BaseViewController+Swizzling.m in Sources */,
 				51FC89B81E6F9CE700701104 /* LSNetworkManager.m in Sources */,
+				514D7AE71E83631900E6B13A /* LSPlayStreamViewController.m in Sources */,
+				514D7AE41E82744000E6B13A /* NSMutableDictionary+Swizzling.m in Sources */,
+				514D7AE11E82740700E6B13A /* NSMutableArray+Swizzling.m in Sources */,
 				513DFD381E67F5BC00687596 /* AppDelegate.m in Sources */,
 				513DFD741E67FDD000687596 /* BaseViewController.m in Sources */,
 				512C9CB81E6907A30088DCB6 /* LSLiveModel.m in Sources */,
 				513DFD821E680C0B00687596 /* LSHomeViewModel.m in Sources */,
 				513DFD881E68111300687596 /* LSHomeViewCell.m in Sources */,
 				513DFD351E67F5BC00687596 /* main.m in Sources */,
+				514D7A361E8214B600E6B13A /* NSObject+MethodSwizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

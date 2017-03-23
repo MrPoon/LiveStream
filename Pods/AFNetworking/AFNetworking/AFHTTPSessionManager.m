@@ -58,7 +58,6 @@
 - (instancetype)initWithBaseURL:(NSURL *)url {
     return [self initWithBaseURL:url sessionConfiguration:nil];
 }
-
 - (instancetype)initWithSessionConfiguration:(NSURLSessionConfiguration *)configuration {
     return [self initWithBaseURL:nil sessionConfiguration:configuration];
 }

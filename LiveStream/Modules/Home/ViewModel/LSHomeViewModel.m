@@ -44,7 +44,8 @@
         @weakify(self);
         NSString *urlStr = [NSString stringWithFormat:@"http://live.9158.com/Fans/GetHotLive?page=%ld",pageCount];
         [[LSNetworkManager shareManager] requestWithPath:urlStr
-                                           requestParams:nil requestType:GET
+                                           requestParams:nil
+                                             requestType:GET
                                          requestComplete:^(id respondObject, NSError *error) {
                                              if (!error) {
                                                  NSArray *listData = [[respondObject objectForKey:@"data"] objectForKey:@"list"];
@@ -56,7 +57,6 @@
                                                          cellModel.liveModel = liveModel;
                                                          [self.dataSource addObject:cellModel];
                                                          self.number = @(self.dataSource.count);
-                                                         NSLog(@"%@",respondObject);
                                                      }
                                                      [subscriber sendNext:nil];
                                                      [subscriber sendCompleted];

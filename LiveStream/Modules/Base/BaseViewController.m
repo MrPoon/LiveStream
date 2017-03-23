@@ -14,6 +14,11 @@
 
 @implementation BaseViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSLog(@"我是原始的");
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 }

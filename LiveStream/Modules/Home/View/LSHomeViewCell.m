@@ -134,14 +134,44 @@
     self.startView.image  = cellModel.startImage;
     self.startView.hidden = !cellModel.startleveal;
     
-    // 设置当前观众数量
     NSString *fullChaoyang = [NSString stringWithFormat:@"%ld人在看", cellModel.number];
     NSRange range = [fullChaoyang rangeOfString:[NSString stringWithFormat:@"%ld", cellModel.number]];
     NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:fullChaoyang];
     [attr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:17] range: range];
     [attr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:range];
     self.numberLabel.attributedText = attr;
+    NSString *string = [self getBinaryFromIntegar:255];
+    NSLog(@"%@",string);
+}
+
+-(NSString *)getBinaryFromIntegar:(NSInteger)integar
+{
+    NSString *Binary = @"1";
+    while (integar / 2) {
+        integar = integar / 2;
+        Binary = [Binary stringByAppendingString:[NSString stringWithFormat:@"%ld",integar % 2]];
+    }
+    return Binary;
+    
 }
 
 
+//指针变量1—> 指向堆中的对象1
+//指针变量2（copy)->指向堆中的对象1
+//1.此时操作指针变量2（实际对象1），不进行指针变量2重新赋值，此时的操作会同步到外部的对象1
+//比如说（对象1是一个model，此时只操作model的属性修改）
+//2.此时进行指针变量2重新赋值操作，就相当于指向了一个新的对象，此时操作指针2，不会影响到对象1的内容。
+//比如说（对象1是一个NSString,此时重新初始化一个新的字符串，赋值操作）
+//当遇到情形2的时候，并且需要函数内部的修改操作同步到外部，可以采用把参数以（双指针的形式传递）
+//函数的形参是实参copy出来的一份。
+//双指针的原理就是，但形参copy实参的时候，此时参数是一个双指针的值。
+//NSString *string;
+//[self stringWithString:&string];
+//-(NSString *)stringWithString:(NSString **)string1 {
+    //形参是一个新的指针变量string1，是从实参指针变量string copy出来的一份。
+    //此时两个指针变量指向的内容（指针变量string的地址）相同，
+    //使用*string1取出内容（指针变量string的地址）进行任何操作，都会同步到实参上，因为此时操作的是地址
+    //*strong1 = @"hello word";
+    //return *string1;
+//}
 @end

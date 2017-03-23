@@ -9,5 +9,4 @@
 #import "LSLiveModel.h"
 
 @implementation LSLiveModel
-
 @end

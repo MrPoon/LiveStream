@@ -10,6 +10,7 @@
 #import "LSHomeViewModel.h"
 #import "LSHomeViewCell.h"
 #import <objc/runtime.h>
+#import "LSPlayStreamViewController.h"
 @interface LSHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) LSHomeViewModel *viewModel;
@@ -26,9 +27,9 @@
     [self showLoadingWithTitle:@"加载中..." Animated:YES];
     self.pageCount = 1;
     [_tableView.mj_header beginRefreshing];
-    [self.viewModel addObserver:self forKeyPath:NSStringFromSelector(@selector(number)) options:NSKeyValueObservingOptionNew context:nil];
     
 }
+
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"number"] && (object == self.viewModel)) {
@@ -72,7 +73,6 @@
 
 -(void)refreshData {
     @weakify(self);
-    RACObserve(<#TARGET#>, <#KEYPATH#>)
     [[self.viewModel getAllLiveDataWithPageCount:self.pageCount] subscribeNext:^(id x) {
         @strongify(self);
         if ([x isKindOfClass:[NSString class]]) {
@@ -88,6 +88,16 @@
     } completed:^{
         @strongify(self);
         [self.tableView reloadData];
+        
+        
+        //
+        NSMutableArray *dataSource = [NSMutableArray array];
+        for (LSHomeViewCellModel *Model in self.viewModel.dataSource) {
+            
+            NSLog(@"-----%ld",[Model.title hash]);
+            [dataSource addObject:@([Model.title hash])];
+        }
+         NSLog(@"-----");
     }];
 }
 
@@ -101,17 +111,29 @@
     if (!cell) {
         cell = [[LSHomeViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    cell.cellModel = self.viewModel.dataSource[indexPath.row];
+
+    LSHomeViewCellModel *cellModel = self.viewModel.dataSource[indexPath.row];
+    cell.cellModel = cellModel;
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 465;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LSPlayStreamViewController *vc = [[LSPlayStreamViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     [self removeObserver:self forKeyPath:@"number"];
 }
-
+-(void)dealloc
+{
+    NSLog(@"%@",[self class]);
+}
 
 @end
