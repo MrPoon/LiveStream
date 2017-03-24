@@ -8,35 +8,43 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LSLiveModel : NSObject
-/** 直播图 */
-@property (nonatomic, copy  ) NSString   *bigpic;
-/** 主播头像 */
-@property (nonatomic, copy  ) NSString   *smallpic;
-/** 直播流地址 */
-@property (nonatomic, copy  ) NSString   *flv;
-/** 所在城市 */
-@property (nonatomic, copy  ) NSString   *gps;
-/** 主播名 */
-@property (nonatomic, copy  ) NSString   *myname;
-/** 个性签名 */
-@property (nonatomic, copy  ) NSString   *signatures;
-/** 用户ID */
-@property (nonatomic, copy  ) NSString   *userId;
-/** 星级 */
-@property (nonatomic, assign) NSUInteger starlevel;
-/** 朝阳群众数目 */
-@property (nonatomic, assign) NSUInteger allnum;
-/** 这玩意未知 */
-@property (nonatomic, assign) NSUInteger lrCurrent;
-/** 直播房间号码 */
-@property (nonatomic, assign) NSUInteger roomid;
-/** 所处服务器 */
-@property (nonatomic, assign) NSUInteger serverid;
-/** 用户ID */
-@property (nonatomic, assign) NSString   *useridx;
-/** 排名 */
-@property (nonatomic, assign) NSUInteger pos;
-/** starImage */
-@property (nonatomic, strong) UIImage    *starImage;
+@class LSCategoryListModel;
+@interface LSCategoryModel : NSObject
+
+@property (nonatomic, strong) NSString *name; //名称
+@property (nonatomic, assign) NSInteger categoryId; //id
+@property (nonatomic, assign) NSInteger screen;
+/** 1为推荐 2为其它 */
+@property (nonatomic, assign) NSInteger type; //类别 类型
+/** 是否显示在推荐列表 */
+@property (nonatomic, assign) NSInteger isDefault;
+/** 类型 空为推荐 */
+@property (nonatomic, strong) NSString  *slug;
+/** 数据 */
+@property (nonatomic, strong) NSArray<LSCategoryListModel *> *list;
+
+@end
+
+
+/** 列表数据 */
+@interface LSCategoryListModel : NSObject
+
+/** 大图地址 */
+@property (nonatomic, strong) NSURL    *thumb;
+/** 标题 */
+@property (nonatomic, strong) NSString *title;
+/** 头像 */
+@property (nonatomic, strong) NSURL    *avatar;
+/** 名字 */
+@property (nonatomic, strong) NSString *nick;
+/** uid */
+@property (nonatomic, assign) NSInteger uid;
+/** 观看人数 */
+@property (nonatomic, strong) NSString *view;
+/** 类型名字 */
+@property (nonatomic, strong) NSString *categoryName;
+/** 类型id */
+@property (nonatomic, strong) NSString *categoryId;
+/** 类型 */
+@property (nonatomic, strong) NSString *categorySlug;
 @end

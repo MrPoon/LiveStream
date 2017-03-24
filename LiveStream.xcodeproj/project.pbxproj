@@ -26,6 +26,10 @@
 		514D7AE11E82740700E6B13A /* NSMutableArray+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7AE01E82740700E6B13A /* NSMutableArray+Swizzling.m */; };
 		514D7AE41E82744000E6B13A /* NSMutableDictionary+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7AE31E82744000E6B13A /* NSMutableDictionary+Swizzling.m */; };
 		514D7AE71E83631900E6B13A /* LSPlayStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7AE61E83631900E6B13A /* LSPlayStreamViewController.m */; };
+		514D7AF51E84F3FB00E6B13A /* TYPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7AED1E84F3FB00E6B13A /* TYPagerController.m */; };
+		514D7AF61E84F3FB00E6B13A /* TYTabButtonPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7AEF1E84F3FB00E6B13A /* TYTabButtonPagerController.m */; };
+		514D7AF71E84F3FB00E6B13A /* TYTabPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7AF11E84F3FB00E6B13A /* TYTabPagerController.m */; };
+		514D7AF81E84F3FB00E6B13A /* TYTabTitleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 514D7AF41E84F3FB00E6B13A /* TYTabTitleViewCell.m */; };
 		51FC89B81E6F9CE700701104 /* LSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FC89B71E6F9CE700701104 /* LSNetworkManager.m */; };
 		E871D8964CE87AB07485AABF /* libPods-LiveStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B313A374C2E2E9A1B1BD0B50 /* libPods-LiveStream.a */; };
 /* End PBXBuildFile section */
@@ -88,6 +92,16 @@
 		514D7AE31E82744000E6B13A /* NSMutableDictionary+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Swizzling.m"; sourceTree = "<group>"; };
 		514D7AE51E83631900E6B13A /* LSPlayStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPlayStreamViewController.h; sourceTree = "<group>"; };
 		514D7AE61E83631900E6B13A /* LSPlayStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPlayStreamViewController.m; sourceTree = "<group>"; };
+		514D7AEC1E84F3FB00E6B13A /* TYPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerController.h; sourceTree = "<group>"; };
+		514D7AED1E84F3FB00E6B13A /* TYPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerController.m; sourceTree = "<group>"; };
+		514D7AEE1E84F3FB00E6B13A /* TYTabButtonPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabButtonPagerController.h; sourceTree = "<group>"; };
+		514D7AEF1E84F3FB00E6B13A /* TYTabButtonPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabButtonPagerController.m; sourceTree = "<group>"; };
+		514D7AF01E84F3FB00E6B13A /* TYTabPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerController.h; sourceTree = "<group>"; };
+		514D7AF11E84F3FB00E6B13A /* TYTabPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerController.m; sourceTree = "<group>"; };
+		514D7AF21E84F3FB00E6B13A /* TYTabTitleCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabTitleCellProtocol.h; sourceTree = "<group>"; };
+		514D7AF31E84F3FB00E6B13A /* TYTabTitleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabTitleViewCell.h; sourceTree = "<group>"; };
+		514D7AF41E84F3FB00E6B13A /* TYTabTitleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabTitleViewCell.m; sourceTree = "<group>"; };
+		514D7AF91E84F50100E6B13A /* PublicDefColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicDefColor.h; sourceTree = "<group>"; };
 		51FC89B61E6F9CE700701104 /* LSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNetworkManager.h; sourceTree = "<group>"; };
 		51FC89B71E6F9CE700701104 /* LSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNetworkManager.m; sourceTree = "<group>"; };
 		645B5CC9CE56618886FE2312 /* Pods-LiveStream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveStream.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiveStream/Pods-LiveStream.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +210,7 @@
 		513DFD661E67F81200687596 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				514D7AEA1E84F3DA00E6B13A /* Vendors */,
 				513DFD711E67FD8500687596 /* Base */,
 				513DFD671E67F81200687596 /* Home */,
 				513DFD6C1E67F81200687596 /* Login */,
@@ -296,6 +311,7 @@
 		513DFD711E67FD8500687596 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				514D7AF91E84F50100E6B13A /* PublicDefColor.h */,
 				513DFD721E67FDCF00687596 /* BaseViewController.h */,
 				513DFD731E67FDCF00687596 /* BaseViewController.m */,
 				513DFD751E67FE0500687596 /* BaseNavigationController.h */,
@@ -313,6 +329,30 @@
 				514D7AE31E82744000E6B13A /* NSMutableDictionary+Swizzling.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		514D7AEA1E84F3DA00E6B13A /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				514D7AEB1E84F3FB00E6B13A /* TYPagerController */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		514D7AEB1E84F3FB00E6B13A /* TYPagerController */ = {
+			isa = PBXGroup;
+			children = (
+				514D7AEC1E84F3FB00E6B13A /* TYPagerController.h */,
+				514D7AED1E84F3FB00E6B13A /* TYPagerController.m */,
+				514D7AEE1E84F3FB00E6B13A /* TYTabButtonPagerController.h */,
+				514D7AEF1E84F3FB00E6B13A /* TYTabButtonPagerController.m */,
+				514D7AF01E84F3FB00E6B13A /* TYTabPagerController.h */,
+				514D7AF11E84F3FB00E6B13A /* TYTabPagerController.m */,
+				514D7AF21E84F3FB00E6B13A /* TYTabTitleCellProtocol.h */,
+				514D7AF31E84F3FB00E6B13A /* TYTabTitleViewCell.h */,
+				514D7AF41E84F3FB00E6B13A /* TYTabTitleViewCell.m */,
+			);
+			path = TYPagerController;
 			sourceTree = "<group>";
 		};
 		7C890BFAA6019E70A57026AD /* Pods */ = {
@@ -511,6 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				514D7AF71E84F3FB00E6B13A /* TYTabPagerController.m in Sources */,
 				513DFD7A1E67FE6500687596 /* LSTabBarController.m in Sources */,
 				513DFD851E680F7100687596 /* LSHomeViewController.m in Sources */,
 				513DFD771E67FE0500687596 /* BaseNavigationController.m in Sources */,
@@ -524,7 +565,10 @@
 				512C9CB81E6907A30088DCB6 /* LSLiveModel.m in Sources */,
 				513DFD821E680C0B00687596 /* LSHomeViewModel.m in Sources */,
 				513DFD881E68111300687596 /* LSHomeViewCell.m in Sources */,
+				514D7AF61E84F3FB00E6B13A /* TYTabButtonPagerController.m in Sources */,
 				513DFD351E67F5BC00687596 /* main.m in Sources */,
+				514D7AF81E84F3FB00E6B13A /* TYTabTitleViewCell.m in Sources */,
+				514D7AF51E84F3FB00E6B13A /* TYPagerController.m in Sources */,
 				514D7A361E8214B600E6B13A /* NSObject+MethodSwizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

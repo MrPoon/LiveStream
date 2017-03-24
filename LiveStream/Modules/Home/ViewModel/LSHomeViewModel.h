@@ -21,6 +21,7 @@
 @end
 
 @interface LSHomeViewModel : RVMViewModel
+@property(nonatomic, strong) NSMutableArray *categoryInfo;
 @property(nonatomic, strong) NSMutableArray *dataSource;
 @property(nonatomic, strong) NSNumber *number;
 
