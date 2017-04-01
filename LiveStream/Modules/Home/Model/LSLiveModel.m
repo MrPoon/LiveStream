@@ -8,5 +8,21 @@
 
 #import "LSLiveModel.h"
 
+@implementation LSCategoryModel
+
++(NSDictionary *)mj_replacedKeyFromPropertyName
+{
+    return @{
+             @"categoryId" : @"id"
+             };
+}
++(NSDictionary *)mj_objectClassInArray
+{
+    return @{
+             @"list" : @"LSLiveModel"
+             };
+}
+@end
+
 @implementation LSLiveModel
 @end

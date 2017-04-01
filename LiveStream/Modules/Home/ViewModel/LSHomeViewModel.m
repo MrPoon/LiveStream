@@ -7,27 +7,22 @@
 //
 
 #import "LSHomeViewModel.h"
+
 @implementation LSHomeViewCellModel
--(UIImage *)startImage
-{
-    if (self.startleveal) {
-        return [UIImage imageNamed:[NSString stringWithFormat:@"girl_star%ld_40x19", self.startleveal]];
-    }
-    return nil;
-}
--(void)setLiveModel:(LSLiveModel *)liveModel
-{
-    _liveModel = liveModel;
-    self.avatar = liveModel.smallpic;
-    self.title = liveModel.myname;
-    self.address = liveModel.gps;
-    self.startleveal = liveModel.starlevel;
-    self.number = liveModel.allnum;
-    self.content = liveModel.bigpic;
-}
+
 @end
 
 @implementation LSHomeViewModel
+
++(LSHomeViewModel *)shareInstance
+{
+    static LSHomeViewModel *instance = nil;
+    static dispatch_once_t once_token;
+    dispatch_once(&once_token, ^{
+        instance = [[LSHomeViewModel alloc] init];
+    });
+    return instance;
+}
 
 -(NSMutableArray *)dataSource
 {
@@ -36,27 +31,58 @@
     }
     return _dataSource;
 }
--(RACSignal *)getAllLiveDataWithPageCount:(NSUInteger)pageCount
+-(RACSignal *)getCategoryInfos
+{
+    RACSignal *singal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        
+        [[LSNetworkManager shareManager] requestWithPath:GATEGORYINFO
+                                           requestParams:nil
+                                             requestType:GET
+                                         requestComplete:^(id respondObject, NSError *error) {
+                                             if (!error) {
+                                                 if (respondObject) {
+                                                     NSMutableArray *categoryInfos = [NSMutableArray array];
+                                                     for (NSDictionary *dic in respondObject) {
+                                                         LSCategoryModel *categoryModel = [LSCategoryModel mj_objectWithKeyValues:dic];
+                                                         [categoryInfos addObject:categoryModel];
+                                                     }
+                                                     self.categoryInfos = categoryInfos;
+                                                 }
+                                                 [subscriber sendNext:nil];
+                                                 [subscriber sendCompleted];
+                                             } else {
+                                                 [subscriber sendNext:nil];
+                                                 [subscriber sendError:nil];
+                                             }
+            
+        }];
+        
+        return nil;
+    }];
+    return singal;
+}
+
+-(RACSignal *)getRecommendData
 {
     
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         //获取数据
         @weakify(self);
-        NSString *urlStr = [NSString stringWithFormat:@"http://live.9158.com/Fans/GetHotLive?page=%ld",pageCount];
+        NSString *urlStr = @"http://www.quanmin.tv/json/app/index/recommend/list-iphone.json";
         [[LSNetworkManager shareManager] requestWithPath:urlStr
                                            requestParams:nil
                                              requestType:GET
                                          requestComplete:^(id respondObject, NSError *error) {
                                              if (!error) {
-                                                 NSArray *listData = [[respondObject objectForKey:@"data"] objectForKey:@"list"];
+                                                 NSArray *listData = [respondObject objectForKey:@"room"];
                                                  if (listData.count) {
                                                      @strongify(self);
+                                                     self.recommendData = [NSMutableArray array];
                                                      for (NSDictionary *dic in listData) {
-                                                         LSLiveModel *liveModel = [LSLiveModel mj_objectWithKeyValues:dic];
-                                                         LSHomeViewCellModel *cellModel = [[LSHomeViewCellModel alloc] init];
-                                                         cellModel.liveModel = liveModel;
-                                                         [self.dataSource addObject:cellModel];
-                                                         self.number = @(self.dataSource.count);
+                                                         LSCategoryModel *categoryModel = [LSCategoryModel mj_objectWithKeyValues:dic];
+                                                         if (categoryModel.list.count) {
+                                                            [self.recommendData addObject:categoryModel];
+                                                         }
                                                      }
                                                      [subscriber sendNext:nil];
                                                      [subscriber sendCompleted];

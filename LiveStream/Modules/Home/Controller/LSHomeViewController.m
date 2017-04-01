@@ -12,17 +12,15 @@
 #import <objc/runtime.h>
 #import "LSPlayStreamViewController.h"
 #import "TYTabButtonPagerController.h"
-@interface LSHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "LSRecommendListViewController.h"
+@interface LSHomeViewController ()<TYPagerControllerDelegate,TYPagerControllerDataSource>
 @property(nonatomic, strong) TYTabButtonPagerController *pagerController;
-@property(nonatomic, strong) LSHomeViewModel *homeViewModel;
 @end
 
 @implementation LSHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.homeViewModel = [[LSHomeViewModel alloc] init];
-    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     //左上角logo
     UIButton *leftbutton=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -32,6 +30,14 @@
     
     [self addPagerController];
     [self configureTabButtonPager];
+    @weakify(self);
+    [[[LSHomeViewModel shareInstance] getCategoryInfos] subscribeNext:^(id x) {
+        
+    } error:^(NSError *error) {
+    } completed:^{
+        @strongify(self);
+        [self.pagerController reloadData];
+    }];
 }
 
 //MARK: - 添加视图
@@ -61,33 +67,26 @@
 //MARK: - TYPagerControllerDataSource
 - (NSInteger)numberOfControllersInPagerController
 {
-    return _homeViewModel.categoryInfo.count;
+    return [LSHomeViewModel shareInstance].categoryInfos.count;
 }
 
 - (NSString *)pagerController:(TYPagerController *)pagerController titleForIndex:(NSInteger)index
 {
-    SkyCategoryModel *model = [HomeDataManager.categoryInfo objectAtIndex:index];
+    LSCategoryModel *model = [[LSHomeViewModel shareInstance].categoryInfos objectAtIndex:index];
     return model.name;
 }
 
 - (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index
 {
-    SkyCategoryModel *model = [HomeDataManager.categoryInfo objectAtIndex:index];
-    if (model.type == 1)
-        {
+    LSCategoryModel *model = [[LSHomeViewModel shareInstance].categoryInfos objectAtIndex:index];
+//    if (model.type == 1)
+//        {
         //推荐
-        SkyRecommendedViewController *recommendedVC = [[SkyRecommendedViewController alloc]init];
-        recommendedVC.moveToControllerBlock = ^(NSInteger index){
-            //这里如果数据变化,会崩溃,毕竟上面标签是写死的 ~
-            [_pagerController moveToControllerAtIndex:index animated:NO];
-        };
+        LSRecommendListViewController *recommendedVC = [[LSRecommendListViewController alloc]init];
+        
         return recommendedVC;
-        }else
-            {   //其它
-                SkyOtherViewController *otherVC = [[SkyOtherViewController alloc]init];
-                otherVC.slug = model.slug;
-                return otherVC;
-            }
+//        }
+//    return nil;
 }
 
 - (void)didReceiveMemoryWarning {

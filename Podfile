@@ -15,4 +15,5 @@ pod 'BarrageRenderer', '~> 1.8.0'
 pod 'LFLiveKit', '~> 1.6'
 pod 'FMDB', '~> 2.6.2'
 pod 'MAObjCRuntime', '~> 0.0.1'
+pod 'RongCloudIM', '~> 2.8.7'
 end

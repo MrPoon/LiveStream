@@ -8,29 +8,49 @@
 
 #import <Foundation/Foundation.h>
 
-@class LSCategoryListModel;
+@class LSLiveModel;
 @interface LSCategoryModel : NSObject
 
-@property (nonatomic, strong) NSString *name; //名称
-@property (nonatomic, assign) NSInteger categoryId; //id
-@property (nonatomic, assign) NSInteger screen;
-/** 1为推荐 2为其它 */
-@property (nonatomic, assign) NSInteger type; //类别 类型
-/** 是否显示在推荐列表 */
-@property (nonatomic, assign) NSInteger isDefault;
-/** 类型 空为推荐 */
-@property (nonatomic, strong) NSString  *slug;
-/** 数据 */
-@property (nonatomic, strong) NSArray<LSCategoryListModel *> *list;
+@property(nonatomic, strong) NSString *name; //名称
+@property(nonatomic, assign) NSInteger categoryId; //id
+@property(nonatomic, assign) NSInteger screen;
+@property(nonatomic, assign) NSInteger type; //类别
+@property(nonatomic, assign) NSInteger is_default;
+@property(nonatomic, strong) NSString  *slug;
+@property(nonatomic, strong) NSString *icon_image;
+@property(nonatomic, strong) NSString *icon_red;
+@property(nonatomic, strong) NSString *icon_gray;
+@property(nonatomic, strong) NSArray<LSLiveModel *> *list;
 
 @end
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /** 列表数据 */
-@interface LSCategoryListModel : NSObject
+@interface LSLiveModel : NSObject
 
 /** 大图地址 */
-@property (nonatomic, strong) NSURL    *thumb;
+@property (nonatomic, strong) NSString  *thumb;
 /** 标题 */
 @property (nonatomic, strong) NSString *title;
 /** 头像 */

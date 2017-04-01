@@ -21,10 +21,14 @@
 @end
 
 @interface LSHomeViewModel : RVMViewModel
-@property(nonatomic, strong) NSMutableArray *categoryInfo;
+@property(nonatomic, strong) NSMutableArray *categoryInfos;
+@property(nonatomic, strong) NSMutableArray *recommendData;
 @property(nonatomic, strong) NSMutableArray *dataSource;
 @property(nonatomic, strong) NSNumber *number;
 
++(LSHomeViewModel *)shareInstance;
+-(RACSignal *)getRecommendData;
+-(RACSignal *)getCategoryInfos;
 -(RACSignal *)getAllLiveDataWithPageCount:(NSUInteger)pageCount;
 
 @end
